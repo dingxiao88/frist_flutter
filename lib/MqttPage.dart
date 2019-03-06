@@ -33,9 +33,7 @@ class MqttPageState extends State<MqttPage>{
   var statusMessage = '';
   var _topic1 = 'pic';
   var _topic2 = 'dx';
-  var _mqttUsername = 'qianguan';
-  var _mqttPassword = 'qianguan@147258369';
-  MqttClient client = MqttClient('dx1023.com', 'dx1546');
+  MqttClient client = MqttClient('ip.com', 'id');
   TextEditingController _controller = TextEditingController();
 
   int flag = 0;
@@ -86,7 +84,7 @@ class MqttPageState extends State<MqttPage>{
 
   Future _connect() async{
     //client.setProtocolV31();
-    client.port = 8881;
+    client.port = port;
     client.logging(false);
     client.keepAlivePeriod=20;
     client.onDisconnected = _onDisconnect;
